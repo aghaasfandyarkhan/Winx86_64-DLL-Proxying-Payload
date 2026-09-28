@@ -1,0 +1,8 @@
+LIBRARY winx86_64_dll_proxying
+EXPORTS
+    beNotified = mimeTools2.beNotified @1
+    getFuncsArray = mimeTools2.getFuncsArray @2
+    getName = mimeTools2.getName @3
+    isUnicode = mimeTools2.isUnicode @4
+    messageProc = mimeTools2.messageProc @5
+    setInfo = mimeTools2.setInfo @6

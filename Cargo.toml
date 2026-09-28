@@ -1,0 +1,18 @@
+[package]
+name = "winx86_64_dll_proxying"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[profile.release]
+opt-level = 3          # max speed optimization
+lto = true             # link-time optimization across crates
+codegen-units = 1      # single codegen unit = better optimization
+panic = "abort"        # removes panic unwinding overhead
+strip = true           # strip debug symbols = smaller DLL
+incremental = false    # disable incremental = better full optimization
+
+[dependencies]
+winapi = { version = "0.3.9", features = ["minwindef", "memoryapi", "processthreadsapi", "winnt"] }
